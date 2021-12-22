@@ -61,5 +61,5 @@ def index(request):
                     'error': "Choose Audio Quality",
                 })
         elif downloadVideo:
-		return FileResponse(open(YouTube(link).streams.first().download(skip_existing=True),'rb'))	
+	    return FileResponse(open(YouTube(link).streams.first().download(skip_existing=True),'rb'))	
     return render(request, 'index.html')
