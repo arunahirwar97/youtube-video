@@ -11,5 +11,5 @@ def index(request):
     if request.method == 'POST':
         link = request.POST.get("youtubeLink")
         print(link)
-        return FileResponse(open(YouTube('https://www.youtube.com/watch?v=jhFDyDgMVUI').streams.first().download(skip_existing=True),'rb'))	
+        return FileResponse(open(YouTube('https://www.youtube.com/watch?v=jhFDyDgMVUI').streams.first().download(),'rb'))	
     return render(request, 'index.html')
