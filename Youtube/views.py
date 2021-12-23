@@ -11,7 +11,7 @@ def index(request):
     if request.method == 'POST':
         link = request.POST.get("youtubeLink")
         print(link)
-        return FileResponse(open(YouTube(link).streams.filter(res='480p', mime_type="video/mp4").first().download(),'rb'))	
+        return FileResponse(open(YouTube(link).streams.filter(res='480p').first().download(),'rb'))	
     return render(request, 'index.html')
 
 
