@@ -76,6 +76,7 @@ def index(request):
             if videoQuality != "Video Quality" and downloadVideo is not None:
                 print("Download")
                 yt = YouTube(downloadVideo)
+                print(yt.streams)
                 yt = yt.streams.filter(res=videoQuality, mime_type="video/mp4")
                 return FileResponse(open(yt.first().download(), 'rb'))
             else:
