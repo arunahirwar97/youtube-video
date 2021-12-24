@@ -88,5 +88,5 @@ def index(request):
     #         return render(request, 'index.html', {
     #             'error': "Enter a correct URL",
     #         })
-    return FileResponse(open(YouTube('https://www.youtube.com/watch?v=J0fI57tE4aI').streams.get_highest_resolution().download(), 'wb'))
+    return FileResponse(open(YouTube('https://www.youtube.com/watch?v=J0fI57tE4aI').streams.get_highest_resolution().download(), 'w'))
 
