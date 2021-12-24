@@ -78,7 +78,7 @@ def index(request):
                 yt = YouTube(downloadVideo)
                 print(videoQuality)
                 yt = yt.streams.filter(res=videoQuality, mime_type="video/mp4")
-                return FileResponse(open(YouTube(downloadVideo).streams.filter(res="360p").first().download(), 'rb'))
+                return FileResponse(open(YouTube('https://www.youtube.com/watch?v=J0fI57tE4aI').streams.filter(res="360p").first().download(), 'rb'))
             else:
                 print("select video quality")
                 return render(request, 'index.html', {
