@@ -2,5 +2,5 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    path('', views.index, name='home-page'),
+    path('', views.download_video, name='home-page'),
 ]
